@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/register', formData);
+      await axios.post('https://travel-backend-api-4oc9.onrender.com/api/register', formData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');

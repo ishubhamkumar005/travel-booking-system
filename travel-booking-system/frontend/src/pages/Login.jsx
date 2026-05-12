@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/login', formData);
+      const res = await axios.post('https://travel-backend-api-4oc9.onrender.com/api/login', formData);
       login(res.data.user, res.data.token);
       navigate('/dashboard');
     } catch (err) {

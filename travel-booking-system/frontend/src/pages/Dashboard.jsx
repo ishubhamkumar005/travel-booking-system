@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   const fetchBookings = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/bookings');
+      const res = await axios.get('https://travel-backend-api-4oc9.onrender.com/api/bookings');
       setBookings(res.data);
     } catch (err) {
       console.error('Error fetching bookings', err);
@@ -62,9 +62,9 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/bookings/${editingId}`, formData);
+        await axios.put(`https://travel-backend-api-4oc9.onrender.com/api/bookings/${editingId}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/bookings', formData);
+        await axios.post('https://travel-backend-api-4oc9.onrender.com/api/bookings', formData);
       }
       setIsModalOpen(false);
       fetchBookings();
@@ -76,7 +76,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to cancel this booking?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/bookings/${id}`);
+        await axios.delete(`https://travel-backend-api-4oc9.onrender.com/api/bookings/${id}`);
         fetchBookings();
       } catch (err) {
         console.error('Error deleting booking', err);
